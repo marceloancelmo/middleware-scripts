@@ -10,7 +10,7 @@ appexists = AdminApplication.checkIfAppExists(sys.argv[0])
 
 if (appexists == "false"):
 	print "Installing the application " + sys.argv[0]
-
+    #TODO: Retrieve cellname and HTTP server name from configuration
 	# Instalando a aplicacao em um determinado servidor, os argumentos sao os seguintes:
 	AdminApp.install(sys.argv[1], '[ -nopreCompileJSPs -distributeApp -nouseMetaDataFromBinary -nodeployejb -appname sys.argv[0] -createMBeansForResources -noreloadEnabled -nodeployws -validateinstall warn -noprocessEmbeddedConfig -filepermission .*\.dll=755#.*\.so=755#.*\.a=755#.*\.sl=755 -noallowDispatchRemoteInclude -noallowServiceRemoteInclude -asyncRequestDispatchType DISABLED -nouseAutoLink -noenableClientModule -clientMode isolated -novalidateSchema -contextroot /sys.argv[4] -MapModulesToServers [[ bb/com/br/alm sys.argv[1],WEB-INF/web.xml WebSphere:cell=lepz0129Cell01,node=sys.argv[2],server=IHS-8+WebSphere:cell=lepz0129Cell01,node=sys.argv[2],server=sys.argv[3] ]] -MapWebModToVH [[ bb/com/br/alm sys.argv[1],WEB-INF/web.xml default_host ]] -CtxRootForWebMod [[ bb/com/br/alm sys.argv[1],WEB-INF/web.xml /sys.argv[4] ]]]' )
 else:
